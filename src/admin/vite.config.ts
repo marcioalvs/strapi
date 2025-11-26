@@ -7,6 +7,7 @@ export default (config: UserConfig) => {
       allowedHosts: [
         'localhost',
         'cms-poc-strapi.jzqlap.easypanel.host',
+        'strapi',
         // ...
       ],
     },
