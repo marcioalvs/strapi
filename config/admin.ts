@@ -24,7 +24,7 @@ export default ({ env }) => ({
       async handler(uid, { documentId, locale, status }) {
         // Fetch the document and construct the preview URL
         const document = await strapi.documents(uid).findOne({ documentId });
-        return `${env('CLIENT_URL')}/api/draft?uid=${uid}&status=${status}&documentId=${documentId}&slug=${document.slug}`;
+        return `${env('CLIENT_URL')}/api/draft?uid=${uid}&secret=${env('PREVIEW_SECRET')}&slug=${document.slug}`;
       },
     },
   }, 
